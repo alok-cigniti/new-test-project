@@ -24,10 +24,9 @@ public class CatalogResource {
                 new CatalogItem("Manoj", "testing", 101),
                 new CatalogItem("Shivam", "architect", 102));
     }
-}
 
-/*
-Alternative WebClient way
-Movie movie = webClientBuilder.build().get().uri("http://localhost:8082/movies/"+ rating.getMovieId())
-.retrieve().bodyToMono(Movie.class).block();
-*/
+    @RequestMapping("/get-name")
+    public String getItemName() {
+        return "Alok";
+    }
+}
