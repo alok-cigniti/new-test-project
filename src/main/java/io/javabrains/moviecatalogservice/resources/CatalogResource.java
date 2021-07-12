@@ -16,6 +16,7 @@ public class CatalogResource {
     public List<CatalogItem> getCatalog(@PathVariable("userId") String userId) {
         return Arrays.asList(new CatalogItem("Alok", "developer", 100),
                 new CatalogItem("Manoj", "testing", 101),
+                new CatalogItem("Alok", "testing", 105),
                 new CatalogItem("Shivam", "architect", 102));
     }
 
