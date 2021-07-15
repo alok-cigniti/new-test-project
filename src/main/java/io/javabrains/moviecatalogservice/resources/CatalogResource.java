@@ -12,10 +12,10 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/catalog")
-@Profile("dev")
 public class CatalogResource {
-	@Value("${value.from.file}")
-	private String valueFromFile;
+
+	@Value("${app.message}")
+	private String welcomeMessage;
 
 	@RequestMapping("/{userId}")
 	public List<CatalogItem> getCatalog(@PathVariable("userId") String userId) {
@@ -32,8 +32,10 @@ public class CatalogResource {
 				new CatalogItem("Shivam", "architect", 102)).size();
 	}
 
-	@RequestMapping("/env")
-	public String getEnvValue() {
-		return valueFromFile;
+
+
+	@RequestMapping("/welcome")
+	public String getDataBaseConnectionDetails() {
+		return welcomeMessage;
 	}
 }
